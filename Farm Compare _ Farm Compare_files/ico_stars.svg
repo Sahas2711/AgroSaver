@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="20px" viewBox="0 0 120 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-379.000000, -384.000000)" fill="#14AF0E" fill-rule="nonzero">
+            <g id="Group-2" transform="translate(379.000000, 384.000000)">
+                <polygon id="Path" points="20 7.5 12.34375 7.5 10 0 7.65625 7.5 0 7.5 6.203125 12.1510417 3.75 20 10 15 16.25 20 13.796875 12.1510417"></polygon>
+                <polygon id="Path" points="45 7.5 37.34375 7.5 35 0 32.65625 7.5 25 7.5 31.203125 12.1510417 28.75 20 35 15 41.25 20 38.796875 12.1510417"></polygon>
+                <polygon id="Path" points="70 7.5 62.34375 7.5 60 0 57.65625 7.5 50 7.5 56.203125 12.1510417 53.75 20 60 15 66.25 20 63.796875 12.1510417"></polygon>
+                <polygon id="Path" points="95 7.5 87.34375 7.5 85 0 82.65625 7.5 75 7.5 81.203125 12.1510417 78.75 20 85 15 91.25 20 88.796875 12.1510417"></polygon>
+                <polygon id="Path" points="120 7.5 112.34375 7.5 110 0 107.65625 7.5 100 7.5 106.203125 12.1510417 103.75 20 110 15 116.25 20 113.796875 12.1510417"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -50,7 +50,7 @@ e:/Projects/New folder/
 
 1. Clone the repository:
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/Sahas2711/farm-compare.git
    ```
 
 2. Open the project in your preferred code editor
@@ -90,4 +90,3 @@ Follow us on social media:
 - [Twitter](https://twitter.com/FarmCompare)
 - [Instagram](https://www.instagram.com/farmcompare/)
 - [LinkedIn](https://www.linkedin.com/company/farm-compare/)
-"# farm-compare" 

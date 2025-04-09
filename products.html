@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Equipment Products</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <p>Loading FarmCompare...</p>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="FarmCompare" class="logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active"><a href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html">Products <i class="dropdown-icon">▼</i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html">Farm Equipment</a></li>
+                            <li><a href="products.html">Seeds & Plants</a></li>
+                            <li><a href="products.html">Fertilizers</a></li>
+                            <li><a href="products.html">Irrigation</a></li>
+                            <li><a href="products.html">Livestock Supplies</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index.html#about-section">About</a>
+                    </li>
+                    <li class="nav-item"><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
+                    <li class="nav-item"><a href="index.html#feedback-section">Feedback</a>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search products..." class="search-input">
+                        <button type="submit" class="search-button" href="products.html">
+                            <i class="search-icon">🔍</i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="user-actions">
+                    <a href="#" class="user-icon" title="My Account"><i>👤</i></a>
+                    <a href="#" class="cart-icon" title="Cart"><i>🛒</i> <span class="cart-count">0</span></a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="products-page">
+        <section class="products-hero">
+            <div class="container">
+                <h1>Farm Equipment Products</h1>
+                <p>Compare our wide range of agricultural equipment and machinery</p>
+                
+                <div class="compare-controls">
+                    <div class="select-wrapper">
+                        <select class="compare-select">
+                            <option value="">Select Category</option>
+                            <option>Bale Handling Equipment</option>
+                            <option>Bowsers</option>
+                            <option>Cultivation</option>
+                            <option>Dairy</option>
+                            <option>Feeding</option>
+                            <option>General Farm Machinery</option>
+                            <option>Grassland Management</option>
+                            <option>Handling & Welfare</option>
+                            <option>Hay & Forage Equipment</option>
+                            <option>Housing</option>
+                            <option>Land & Animal Husbandry</option>
+                            <option>Precast Concrete</option>
+                            <option>Professional Services</option>
+                            <option>Silage Equipment</option>
+                            <option>Slurry Equipment</option>
+                            <option>Sowers & Spreaders</option>
+                            <option>Technology</option>
+                        </select>
+                    </div>
+                    
+                    <div class="select-wrapper">
+                        <select class="compare-select">
+                            <option value="">Select Type</option>
+                            <option>Bale Handling Equipment</option>
+                            <option>General Farm Machinery</option>
+                            <option>Silage Equipment</option>
+                            <option>Feeding</option>
+                            <option>Precast Concrete</option>
+                            <option>Slurry Equipment</option>
+                            <option>Grassland Management</option>
+                            <option>Cultivation</option>
+                            <option>Hay & Forage Equipment</option>
+                            <option>Professional Services</option>
+                            <option>Dairy</option>
+                            <option>Bowsers</option>
+                            <option>Attachments</option>
+                            <option>Sowers & Spreaders</option>
+                            <option>Land & Animal Husbandry</option>
+                            <option>Technology</option>
+                            <option>Housing</option>
+                            <option>Handling & Welfare</option>
+                        </select>
+                    </div>
+                    
+                    <button class="compare-button">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-results">
+            <div class="container">
+                <div class="results-header">
+                    <h2>Slurry Pump</h2>
+                    <p class="results-count">4 Results returned</p>
+                </div>
+
+                <div class="results-layout">
+                    <aside class="filters-sidebar">
+                        <h3>Filter Products</h3>
+                        <div class="filter-group">
+                            <h4>Brand</h4>
+                            <ul>
+                                <li><label><input type="checkbox" checked> Major</label></li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Pump working depth</h4>
+                            <ul>
+                                <li><label><input type="checkbox"> 2.13m</label></li>
+                                <li><label><input type="checkbox"> 2.43m</label></li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Product Categories</h4>
+                            <ul>
+                                <li><label><input type="checkbox" checked> Slurry Equipment</label></li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Type</h4>
+                            <ul>
+                                <li><label><input type="checkbox" checked> Slurry Tanker</label></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <div class="products-grid" id="productsContainer">
+                        <!-- Products will be loaded dynamically via JavaScript -->
+                    </div>
+
+                    <script>
+                    // Array of all products (8 total)
+const allProducts = [
+    // 4 fixed products
+    {
+        name: "Ventilation Fan Kit",
+        desc: "Energy-efficient fan for livestock housing",
+        brand: "AirFlow",
+        spec: "Diameter: 600 mm",
+        img: "images/farm-comapre.png",
+        category: "Housing",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    {
+        name: "Hydraulic Bale Grab", 
+        desc: "Soft-handling hydraulic grab for wrapped bales",
+        brand: "AgriLift",
+        spec: "Clamp Width: 0.9m–1.8m",
+        img: "images/hy_bale.png",
+        category: "Bale Handling Equipment",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    {
+        name: "Bale Spike Pro 300",
+        desc: "Heavy-duty bale spike for round and square bales",
+        brand: "FarmTech",
+        spec: "Capacity: 1200 kg",
+        img: "images/bale-greeze.png",
+        category: "Bale Handling Equipment",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    {
+        name: "Galvanized Calf Pen",
+        desc: "Indoor housing unit with anti-corrosive panels",
+        brand: "CalfGuard",
+        spec: "Size: 1.2m x 2.0m",
+        img: "images/pr4.png",
+        category: "Housing",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    // 4 additional random products
+    {
+        name: "Automatic Feeder",
+        desc: "Programmable feed dispenser for livestock",
+        brand: "FeedMaster",
+        spec: "Capacity: 50kg",
+        img: "images/feeder.jpg",
+        category: "Feeding",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    {
+        name: "Tractor Attachment Kit",
+        desc: "Multi-purpose front loader attachments",
+        brand: "AgriTech",
+        spec: "Compatible with 50-100HP",
+        img: "images/tractor-attachment.jpg",
+        category: "Attachments",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    {
+        name: "Irrigation Sprinkler",
+        desc: "360° rotating sprinkler for fields",
+        brand: "WaterPro",
+        spec: "Coverage: 20m radius",
+        img: "images/sprinkler.jpg",
+        category: "Irrigation",
+        price: Math.floor(Math.random() * 9000) + 1000
+    },
+    {
+        name: "Manure Spreader",
+        desc: "Hydraulic spreader for organic fertilizer",
+        brand: "EcoFarm",
+        spec: "Capacity: 2000L",
+        img: "images/spreader.jpg",
+        category: "Fertilizers",
+        price: Math.floor(Math.random() * 9000) + 1000
+    }
+                    ];
+
+                    // Function to display all 8 products in random order
+                    function showProducts(searchTerm = '') {
+    const container = document.getElementById('productsContainer');
+    container.innerHTML = '';
+    
+    // Filter products if search term exists
+    let filteredProducts = allProducts;
+    if (searchTerm) {
+        filteredProducts = allProducts.filter(product => 
+            product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            product.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            product.category.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }
+    
+    // Shuffle array but keep first 4 products fixed
+    const fixedProducts = filteredProducts.slice(0, 4);
+    const randomProducts = [...filteredProducts.slice(4)].sort(() => 0.5 - Math.random());
+    const shuffledProducts = [...fixedProducts, ...randomProducts];
+    
+    // Update results count
+    document.querySelector('.results-count').textContent = 
+        `${shuffledProducts.length} Results returned${searchTerm ? ` for "${searchTerm}"` : ''}`;
+    
+    // Display each product
+    shuffledProducts.forEach(product => {
+        container.innerHTML += `
+            <div class="product-card">
+                <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null;this.src='images/pr_image.png';">
+                <h3>${product.name}</h3>
+                <p>${product.desc}</p>
+                <div class="product-price">$${product.price.toLocaleString()}</div>
+                <div class="product-specs">
+                    <span>Brand: ${product.brand}</span>
+                    <span>${product.spec}</span>
+                </div>
+                <button class="view-details" onclick="window.location.href='${product.name === 'Hydraulic Bale Grab' ? 'bale_grab.html' : '#'}'">View Details</button>
+            </div>
+        `;
+    });
+}
+
+
+                    // Make filters refresh the page
+                    document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+                        checkbox.addEventListener('change', function() {
+                            location.reload();
+                        });
+                    });
+
+                    // Initial load
+                    showProducts();
+
+                    // Search functionality
+                    document.querySelector('.search-form').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const searchTerm = document.querySelector('.search-input').value.trim();
+                        showProducts(searchTerm);
+                    });
+                    </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.svg" alt="FarmCompare" class="footer-logo">
+                    <p class="footer-tagline">Your trusted partner in agricultural solutions since 2010.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/farmcompare" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="https://twitter.com/FarmCompare" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/farmcompare/" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="compare.html">Compare</a></li>
+                        <li><a href="#about-section">About</a></li>
+                        <li><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Farm Equipment</a></li>
+                        <li><a href="products.html">Seeds & Plants</a></li>
+                        <li><a href="products.html">Fertilizers</a></li>
+                        <li><a href="products.html">Irrigation</a></li>
+                        <li><a href="products.html">Livestock Supplies</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="icon-pin"></i> 123 Farm Road, Agricultural City, FC 12345</p>
+                        <p><i class="icon-phone"></i> (123) 456-7890</p>
+                        <p><i class="icon-mail"></i> info@farmcompare.com</p>
+                    </address>
+                    <button class="newsletter-button">Subscribe to Newsletter</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FarmCompare. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

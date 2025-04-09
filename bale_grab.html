@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydraulic Bale Grab | FarmCompare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-detail {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .product-header {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .product-image {
+            flex: 1;
+            max-width: 500px;
+        }
+        .product-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-tabs {
+            margin-top: 2rem;
+        }
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            position: relative;
+        }
+        .tab-btn.active {
+            color: #2c7be5;
+        }
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2c7be5;
+        }
+        .tab-content {
+            display: none;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .specs-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .specs-table th, .specs-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 4px;
+        }
+        /* Global Styles */
+        :root {
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+        }
+
+        .inner-wrap {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            text-align: left;
+            text-rendering: optimizeLegibility;
+            font-family: "proxima-nova", sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #939393;
+            box-sizing: inherit;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+            width: 90%;
+            max-width: 1195px;
+            margin: 0 auto;
+        }
+
+        .nav-tabs {
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 1rem;
+            white-space: nowrap;
+            overflow-x: auto;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .nav-tabs .nav-item {
+            margin-bottom: -1px;
+            display: inline-block;
+            float: none;
+        }
+
+        .nav-tabs .nav-link {
+            border: 1px solid transparent;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            padding: 0.75rem 1.25rem;
+            color: var(--gray);
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+            white-space: nowrap;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .nav-tabs .nav-link:hover {
+            border-color: #e9ecef #e9ecef #dee2e6;
+            color: var(--gray-dark);
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+
+        /* Calf Pen Specific Styles */
+        .calf-pen-features {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f5f9f7;
+            border-radius: 8px;
+        }
+        .feature-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .spec-highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .panel-diagram {
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem auto;
+            display: block;
+        }
+        .installation-steps {
+            counter-reset: step;
+            margin: 2rem 0;
+        }
+        .installation-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        .installation-step:before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <p>Loading FarmCompare...</p>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="FarmCompare" class="logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active"><a href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html">Products <i class="dropdown-icon">▼</i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html">Farm Equipment</a></li>
+                            <li><a href="products.html">Seeds & Plants</a></li>
+                            <li><a href="products.html">Fertilizers</a></li>
+                            <li><a href="products.html">Irrigation</a></li>
+                            <li><a href="products.html">Livestock Supplies</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index.html#about-section">About</a>
+                    </li>
+                    <li class="nav-item"><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
+                    <li class="nav-item"><a href="index.html#feedback-section">Feedback</a>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search products..." class="search-input">
+                        <button type="submit" class="search-button" href="products.html">
+                            <i class="search-icon">🔍</i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="user-actions">
+                    <a href="#" class="user-icon" title="My Account"><i>👤</i></a>
+                    <a href="#" class="cart-icon" title="Cart"><i>🛒</i> <span class="cart-count">0</span></a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="product-detail">
+        <div class="product-header">
+            <div class="product-image">
+                <img src="images/hy_bale.png" alt="Hydraulic Bale Grab">
+            </div>
+            <div class="product-info">
+                <h1>Hydraulic Bale Grab</h1>
+                <div class="feature-badge">Brand: AgriLift</div>
+                <div class="feature-badge">1.2m x 2.0m</div>
+                <p class="product-price">$1,299.00</p>
+                <p class="product-desc">Soft-handling hydraulic grab for wrapped bales with adjustable clamp width.</p>
+                <br>
+                <a href="https://wa.me/9096247010?text=I%20want%20to%20buy%20your%20product" class="compare-button">Contact Seller</a>
+
+                
+                <div class="calf-pen-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Galvanized steel construction for anti-corrosion</li>
+                        <li>Heavy-duty hydraulic system</li>
+                        <li>Adjustable clamp width (0.9m - 1.8m)</li>
+                        <li>Safety lock mechanism</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <div class="inner-wrap">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#description" data-toggle="tab" role="tab">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#specifications" data-toggle="tab" role="tab">Specifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews" data-toggle="tab" name="reviews" role="tab">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#qna" data-toggle="tab" name="question" role="tab">Q&amp;A's</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#images" data-toggle="tab" role="tab">Images</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos" data-toggle="tab" role="tab">Videos</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <h3>Product Description</h3>
+                <p>The AgriLift Hydraulic Bale Grab is designed for efficient handling of wrapped bales with minimal damage to the wrapping. Its soft-grip technology ensures secure handling while protecting your valuable forage.</p>
+                <ul>
+                    <li>Adjustable clamp width from 0.9m to 1.8m</li>
+                    <li>Hydraulic operation for precise control</li>
+                    <li>Durable construction with galvanized steel</li>
+                    <li>Compatible with most standard loaders</li>
+                    <li>Safety lock mechanism prevents accidental release</li>
+                </ul>
+            </div>
+
+            <div id="specifications" class="tab-content">
+                <h3>Technical Specifications</h3>
+                <table class="specs-table">
+                    <tr>
+                        <th>Model</th>
+                        <td class="spec-highlight">AG-BG300</td>
+                    </tr>
+                    <tr>
+                        <th>Clamp Width</th>
+                        <td class="spec-highlight">0.9m - 1.8m (adjustable)</td>
+                    </tr>
+                    <tr>
+                        <th>Max Load Capacity</th>
+                        <td><span class="spec-highlight">1200 kg</span> (tested)</td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td>85 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Hydraulic Pressure</th>
+                        <td>150-200 bar</td>
+                    </tr>
+                    <tr>
+                        <th>Compatibility</th>
+                        <td>Universal quick-attach system</td>
+                    </tr>
+                </table>
+                
+                <div class="installation-steps">
+                    <h3>Installation Guide</h3>
+                    <div class="installation-step">
+                        <p>Mount the grab to your loader using the quick-attach system</p>
+                    </div>
+                    <div class="installation-step">
+                        <p>Connect the hydraulic hoses to your tractor's hydraulic system</p>
+                    </div>
+                    <div class="installation-step">
+                        <p>Test the grab operation with no load before first use</p>
+                    </div>
+                    <div class="installation-step">
+                        <p>Adjust the clamp width to match your bale size</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reviews" class="tab-content">
+                <h3>Customer Reviews</h3>
+                <div class="review">
+                    <div class="review-header">
+                        <span class="review-author">John D.</span>
+                        <span class="review-rating">★★★★★</span>
+                    </div>
+                    <p class="review-text">"This bale grab has made feeding so much easier. The adjustable width is perfect for our different sized bales."</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <span class="review-author">Sarah M.</span>
+                        <span class="review-rating">★★★★☆</span>
+                    </div>
+                    <p class="review-text">"Great product overall, though the hydraulic hoses could be a bit longer for our setup."</p>
+                </div>
+            </div>
+
+            <div id="qna" class="tab-content">
+                <h3>Questions & Answers</h3>
+                <div class="question">
+                    <h4>Q: Is this compatible with a John Deere 3032E?</h4>
+                    <p>A: Yes, it works with any tractor that has a standard quick-attach loader.</p>
+                </div>
+                <div class="question">
+                    <h4>Q: What's the warranty period?</h4>
+                    <p>A: This product comes with a 2-year manufacturer's warranty.</p>
+                </div>
+            </div>
+
+            <div id="images" class="tab-content">
+                <h3>Product Images</h3>
+                <div class="gallery">
+                    <img src="images/hy_bale.png" alt="Hydraulic Bale Grab Front View">
+                    <img src="images/hydrualic-bale.png" alt="Hydraulic Bale Grab Side View">
+                    <img src="images/bale-greeze.png" alt="Hydraulic Bale Grab in Action">
+                </div>
+            </div>
+
+            <div id="videos" class="tab-content">
+                <h3>Product Videos</h3>
+                <div class="video-container">
+                    <p>Demo video coming soon</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.svg" alt="FarmCompare" class="footer-logo">
+                    <p class="footer-tagline">Your trusted partner in agricultural solutions since 2010.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/farmcompare" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="https://twitter.com/FarmCompare" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/farmcompare/" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="compare.html">Compare</a></li>
+                        <li><a href="#about-section">About</a></li>
+                        <li><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Farm Equipment</a></li>
+                        <li><a href="products.html">Seeds & Plants</a></li>
+                        <li><a href="products.html">Fertilizers</a></li>
+                        <li><a href="products.html">Irrigation</a></li>
+                        <li><a href="products.html">Livestock Supplies</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="icon-pin"></i> 123 Farm Road, Agricultural City, FC 12345</p>
+                        <p><i class="icon-phone"></i> (123) 456-7890</p>
+                        <p><i class="icon-mail"></i> info@farmcompare.com</p>
+                    </address>
+                    <button class="newsletter-button">Subscribe to Newsletter</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FarmCompare. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Remove active class from all links and content
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked link and corresponding content
+                link.classList.add('active');
+                const tabId = link.getAttribute('href');
+                document.querySelector(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
