@@ -9,14 +9,14 @@
 <body>
     <div class="page-loader">
         <div class="spinner"></div>
-        <p>Loading FarmCompare...</p>
+        <p>Loading AgroSaver...</p>
     </div>
 
     <header class="main-header">
         <div class="header-container">
             <div class="logo-container">
                 <a href="index.html">
-                    <img src="images/logo.svg" alt="FarmCompare" class="logo">
+                    <img src="images/logo.svg" alt="AgroSaver" class="logo">
                 </a>
             </div>
 
@@ -42,9 +42,9 @@
 
             <div class="header-actions">
                 <div class="search-container">
-                    <form class="search-form">
-                        <input type="text" placeholder="Search products..." class="search-input">
-                        <button type="submit" class="search-button" href="products.html">
+                    <form class="search-form" action="products.html" method="get">
+                        <input type="text" name="q" placeholder="Search products..." class="search-input" value="${searchQuery}">
+                        <button type="submit" class="search-button">
                             <i class="search-icon">🔍</i>
                         </button>
                     </form>
@@ -293,14 +293,13 @@ const allProducts = [
                         });
                     });
 
-                    // Initial load
+                    // Show all products
                     showProducts();
 
-                    // Search functionality
+                    // Search functionality - simple form submission
                     document.querySelector('.search-form').addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        const searchTerm = document.querySelector('.search-input').value.trim();
-                        showProducts(searchTerm);
+                        // Let the form submit naturally to products.html
+                        // No need to prevent default or handle via JavaScript
                     });
                     </script>
                     </div>
@@ -316,12 +315,12 @@ const allProducts = [
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="images/logo.svg" alt="FarmCompare" class="footer-logo">
+                    <img src="images/logo.svg" alt="AgroSaver" class="footer-logo">
                     <p class="footer-tagline">Your trusted partner in agricultural solutions since 2010.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/farmcompare" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
-                        <a href="https://twitter.com/FarmCompare" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
-                        <a href="https://www.instagram.com/farmcompare/" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/agrosaver" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="https://twitter.com/AgroSaver" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/agrosaver/" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
                         <a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
                     </div>
                 </div>
@@ -360,7 +359,7 @@ const allProducts = [
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> FarmCompare. All rights reserved.</p>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> AgroSaver. All rights reserved.</p>
                 <div class="legal-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
