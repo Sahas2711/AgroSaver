@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm Equipment Products</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>All Products</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
     <div class="page-loader">
         <div class="spinner"></div>
         <p>Loading AgroSaver...</p>
@@ -64,70 +63,14 @@
             </button>
         </div>
     </header>
-    <main class="products-page">
-        <section class="products-hero">
-            <div class="container">
-                <h1>Farm Equipment Products</h1>
-                <p>Compare our wide range of agricultural equipment and machinery</p>
-                
-                <div class="compare-controls">
-                    <div class="search-input-wrapper">
-                        <input type="text" class="search-input" placeholder="Search products...">
-                        <input type="submit" class="compare-button" value="Search">
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <section class="search-results">
-            <div class="container">
-                <div class="results-header">
-                    <h2>Slurry Pump</h2>
-                    <p class="results-count">4 Results returned</p>
-                </div>
-
-                <div class="results-layout">
-                    <aside class="filters-sidebar">
-                        <h3>Filter Products</h3>
-                        <div class="filter-group">
-                            <h4>Brand</h4>
-                            <ul>
-                                <li><label><input type="checkbox" checked> Major</label></li>
-                            </ul>
-                        </div>
-                        <div class="filter-group">
-                            <h4>Pump working depth</h4>
-                            <ul>
-                                <li><label><input type="checkbox"> 2.13m</label></li>
-                                <li><label><input type="checkbox"> 2.43m</label></li>
-                            </ul>
-                        </div>
-                        <div class="filter-group">
-                            <h4>Product Categories</h4>
-                            <ul>
-                                <li><label><input type="checkbox" checked> Slurry Equipment</label></li>
-                            </ul>
-                        </div>
-                        <div class="filter-group">
-                            <h4>Type</h4>
-                            <ul>
-                                <li><label><input type="checkbox" checked> Slurry Tanker</label></li>
-                            </ul>
-                        </div>
-                    </aside>
-
-                    <div class="products-grid" id="productsContainer">
-                    </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search products...">
+        <button class="compare-button">Search</button>
+    </div>
+    <div class="search-results">
+        <div class="results-count"></div>
+    </div>
+    <div class="products-grid" id="productsContainer"></div>
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -185,7 +128,11 @@
             </div>
         </div>
     </footer>
-   <script src="js/products.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./js/products.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            showProducts();
+        });
+    </script>
 </body>
 </html>
