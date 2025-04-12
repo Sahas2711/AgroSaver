@@ -509,79 +509,45 @@ const allProducts = [
     ];
     
 
-
-// Function to display products
-function showProducts(searchTerm = '') {
-    const container = document.getElementById('productsContainer');
-    container.innerHTML = '';
+    function showProducts(searchTerm = '') {
+        const container = document.getElementById('productsContainer');
+        container.innerHTML = '';
     
-    let filteredProducts = allProducts;
-    if (searchTerm) {
-        filteredProducts = allProducts.filter(product => 
-            product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.category.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-    }
-
-    let productsToShow = filteredProducts;
-    const isProductsPage = window.location.pathname.includes('products.html');
+        let filteredProducts = allProducts;
     
-    if (isProductsPage) {
-        // Show only these 8 specific products on products.html
-        const featuredProductNames = [
-            "Hydraulic Bale Grab",
-            "Galvanized Calf Pen",
-            "Automatic Feeder",
-            "Tractor Attachment Kit",
-            "Irrigation Sprinkler",
-            "Manure Spreader",
-            "Solar-Powered Electric Fence",
-            "Portable Milking Machine"
-        ];
-        productsToShow = filteredProducts.filter(product => 
-            featuredProductNames.includes(product.name)
-        );
-    }
-
-    document.querySelector('.results-count').textContent = 
-        `${productsToShow.length} Results returned${searchTerm ? ` for "${searchTerm}"` : ''}`;
-
-    productsToShow.forEach(product => {
-        container.innerHTML += `
-            <div class="product-card">
-                <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null;this.src='images/pr_image.png';" class="product-image">
-                <h3>${product.name}</h3>
-                <p>${product.desc}</p>
-                <div class="product-price">₹${product.price.toLocaleString()}</div>
-                <div class="product-specs">
-                    <span>Brand: ${product.brand}</span>
-                    <span>${product.spec}</span>
+        if (searchTerm) {
+            filteredProducts = allProducts.filter(product =>
+                product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                product.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                product.category.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+    
+        document.querySelector('.results-count').textContent =
+            `${filteredProducts.length} Results returned${searchTerm ? ` for "${searchTerm}"` : ''}`;
+    
+        filteredProducts.forEach(product => {
+            container.innerHTML += `
+                <div class="product-card">
+                    <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null;this.src='images/pr_image.png';" class="product-image">
+                    <h3>${product.name}</h3>
+                    <p>${product.desc}</p>
+                    <div class="product-price">₹${product.price.toLocaleString()}</div>
+                    <div class="product-specs"><strong>Brand:</strong> ${product.brand} <br><strong>Specs:</strong> ${product.spec}</div>
+                     <button class="view-details" onclick="window.location.href='${product.name === 'Hydraulic Bale Grab' ? 'bale_grab.html' : product.name === 'Galvanized Calf Pen' ? 'calf_pen.html' : '#'}'">View Details</button>
                 </div>
-                <button class="view-details" onclick="window.location.href='${product.name === 'Hydraulic Bale Grab' ? 'bale_grab.html' : product.name === 'Galvanized Calf Pen' ? 'calf_pen.html' : '#'}'">View Details</button>
-            </div>
-        `;
-    });
-}
-
-// Search button click
-document.querySelector('.compare-button').addEventListener('click', function () {
-    const searchInput = document.querySelector('.search-input');
-    const searchTerm = searchInput.value.trim();
-    showProducts(searchTerm);
-    document.querySelector('.search-results').style.display = 'block';
-});
-
-// Enter key in search input
-document.querySelector('.search-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        document.querySelector('.compare-button').click();
+            `;
+        });
     }
-});
-
-// Reload on filter change
-document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        location.reload();
+    
+    // Optional: Add listener for search button
+    document.addEventListener('DOMContentLoaded', function () {
+        showProducts();
+    
+        const searchBtn = document.querySelector('.compare-button');
+        const searchInput = document.querySelector('.search-input');
+    
+        searchBtn.addEventListener('click', () => {
+            showProducts(searchInput.value.trim());
+        });
     });
-});
