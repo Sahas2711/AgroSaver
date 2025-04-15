@@ -4,7 +4,7 @@ const allProducts = [
         desc: "Powerful 55 HP tractor for heavy-duty farming",
         brand: "Mahindra",
         spec: "Engine: 55 HP, Transmission: SynchroMesh",
-        img: "images/mahindra-arjun.png",
+        img: "https://www.kubota.com/innovation/our-stories/images/tractor-india/img_hero_slider_06.jpg",
         category: "Tractor",
         price: 820000
     },
@@ -13,7 +13,7 @@ const allProducts = [
         desc: "Best-selling multi-purpose tractor",
         brand: "Swaraj",
         spec: "Engine: 48 HP, Gearbox: 8F + 2R",
-        img: "images/swaraj-744.png",
+        img: "https://th.bing.com/th/id/OIP.K4XUC3BTV5IiT3VSmOL_mQHaEM?w=303&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
         category: "Tractor",
         price: 560000
     },
@@ -22,7 +22,7 @@ const allProducts = [
         desc: "Reliable performance and fuel-efficient",
         brand: "John Deere",
         spec: "Engine: 50 HP, Steering: Power",
-        img: "images/john-deere-5050.png",
+        img: "https://th.bing.com/th/id/OIP.cgxmCqtTjqGb03FdAitVPAHaFW?rs=1&pid=ImgDetMain",
         category: "Tractor",
         price: 680000
     },
@@ -31,7 +31,7 @@ const allProducts = [
         desc: "Affordable tractor for small farms",
         brand: "Eicher",
         spec: "Engine: 40 HP, Cooling: Air-Cooled",
-        img: "images/eicher-380.png",
+        img: "https://www.mahindratractor.com/sites/default/files/styles/807x480/public/2023-09/which-mahindra-tractor-is-the-best-tractor-in-the-market_637824541009359945%20%281%29_1.webp?itok=S3F13Ld8",
         category: "Tractor",
         price: 450000
     },
@@ -40,7 +40,7 @@ const allProducts = [
         desc: "Versatile tractor with high lifting capacity",
         brand: "Sonalika",
         spec: "Engine: 50 HP, PTO: 540 RPM",
-        img: "images/sonalika-745.png",
+        img: "https://www.onelap.in/news/wp-content/uploads/2020/04/tractor.jpg",
         category: "Tractor",
         price: 590000
     },
@@ -49,7 +49,7 @@ const allProducts = [
         desc: "Fuel-efficient tractor for rugged use",
         brand: "Powertrac",
         spec: "Engine: 50 HP, Brakes: Oil Immersed",
-        img: "images/powertrac-euro.png",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt-sKn5ErDCvEPfKZSqincww5nj8ewMXGMHA&s",
         category: "Tractor",
         price: 530000
     },
@@ -58,7 +58,7 @@ const allProducts = [
         desc: "Ideal for both haulage and agriculture",
         brand: "Farmtrac",
         spec: "Engine: 45 HP, Hydraulics: 1800 kg",
-        img: "images/farmtrac-45.png",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGg84bgDBFQX8ZvaJwxYCAPBt7h5jFmOWN7w&s",
         category: "Tractor",
         price: 520000
     },
@@ -67,7 +67,7 @@ const allProducts = [
         desc: "Advanced Japanese technology for Indian farms",
         brand: "Kubota",
         spec: "Engine: 45 HP, Gearbox: 8F + 4R",
-        img: "images/kubota-mu4501.png",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3AG7a2Wwiulb7tKOwUW9VavHiz1fuUmR_ZA&s",
         category: "Tractor",
         price: 780000
     }
@@ -131,6 +131,7 @@ function showProducts(searchTerm = '') {
 
 function getProductDetailsPageUrl(product) {
     const productName = product.name.toLowerCase().replace(/\s+/g, '-');
+    if(productName === "eicher-380") {return "tr1.html";}
     return `${productName}.html`;
 }
 
@@ -164,3 +165,11 @@ function getActiveFilters() {
     });
     return activeFilters;
 }
+showProducts();
+
+// Reload on filter change
+document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        location.reload();
+    });
+});

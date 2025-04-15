@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm Equipment Products</title>
+    <title>Tractors</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/header.css">
 </head>
@@ -60,27 +60,14 @@
         <div class="nav-bar">
           <a href="index.html">Home</a>
           <a href="products.html">Products <i class="dropdown-icon"></i></a>
-          <a href="index.html#About-section">About</a>
+          <a href="index.html#about-section">About</a>
           <a href="compare.html">Compare</a>
           <a href="allProducts.html">All Products</a>
           <a href="index.html#feedback-section">Feedback</a>
         </div>
       </header>
     <main class="products-page">
-        <section class="products-hero">
-            <div class="container">
-                <h1>Farm Equipment Products</h1>
-                <p>Compare our wide range of agricultural equipment and machinery</p>
-                
-                <div class="compare-controls">
-                    <div class="search-input-wrapper">
-                        <input type="text" class="search-input" placeholder="Search products...">
-                        <input type="submit" class="compare-button" value="Search">
-                    </div>
-                </div>
-            </div>
-        </section>
-    
+
         <section class="search-results">
             <div class="container">
                 <div class="results-header">
@@ -133,10 +120,10 @@
                     <img src="images/logo.svg" alt="AgroSaver" class="footer-logo">
                     <p class="footer-tagline">Your trusted partner in agricultural solutions since 2010.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/agrosaver" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
-                        <a href="https://twitter.com/AgroSaver" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
-                        <a href="https://www.instagram.com/agrosaver/" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
-                        <a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="#" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="#" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="#" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
                     </div>
                 </div>
 
@@ -147,7 +134,7 @@
                         <li><a href="products.html">Products</a></li>
                         <li><a href="compare.html">Compare</a></li>
                         <li><a href="#about-section">About</a></li>
-                        <li><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
 
@@ -186,65 +173,27 @@
     <script src="js/tractors.js"></script>
     <script src="js/main.js"></script>
     <script>
-        <script>
+        
 document.addEventListener('DOMContentLoaded', () => {
-    const searchButton = document.querySelector('.compare-button');
-    const productsContainer = document.getElementById('tractorproductsContainer');
-    const filterCheckboxes = document.querySelectorAll('.filters-sidebar input[type="checkbox"]');
-    const searchInput = document.querySelector('.search-input');
 
-    // Sample allProducts array (replace this with actual data)
-    const allProducts = [
-        { id: 1, name: 'Slurry Pump 1', price: 120000, features: { Brand: 'Major', Depth: '2.13m' }},
-        { id: 2, name: 'Slurry Pump 2', price: 150000, features: { Brand: 'Major', Depth: '2.43m' }},
-        { id: 3, name: 'Tank Sprayer', price: 90000, features: { Brand: 'Other', Depth: '2.13m' }},
-        { id: 4, name: 'Slurry Pump 3', price: 200000, features: { Brand: 'Major', Depth: '2.43m' }},
-        { id: 5, name: 'Plougher', price: 95000, features: { Brand: 'Other' }},
-        { id: 6, name: 'Seeder X', price: 175000, features: { Brand: 'Major' }},
-        { id: 7, name: 'Harvester Max', price: 250000, features: { Brand: 'Major' }},
-        { id: 8, name: 'Slurry Tanker 5000', price: 225000, features: { Brand: 'Major', Depth: '2.43m' }}
-    ];
+showProducts();});
 
-    // Render products
-    function renderProducts(products) {
-        productsContainer.innerHTML = '';
-        if (products.length === 0) {
-            productsContainer.innerHTML = '<p>No products found.</p>';
-            return;
-        }
-
-        products.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.innerHTML = `
-                <h3>${product.name}</h3>
-                <p>Price: ₹${product.price.toLocaleString()}</p>
-                <button onclick="location.href='tractors.html'">View Details</button>
-            `;
-            productsContainer.appendChild(card);
-        });
-    }
-
-    // Initial render (optional)
-    renderProducts(allProducts);
-
-    // Search button click handler
-    searchButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        const query = searchInput.value.toLowerCase();
-        const filtered = allProducts.filter(p => p.name.toLowerCase().includes(query));
-        renderProducts(filtered);
-    });
-
-    // Filter click handler: refresh the page
-    filterCheckboxes.forEach(box => {
-        box.addEventListener('change', () => {
-            location.reload(); // refresh the page
-        });
+document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        const searchTerm = document.querySelector('.search-input').value.trim();
+        showProducts(searchTerm);
     });
 });
+// Reload on filter change
+document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        location.reload();
+    });
+});
+
 </script>
 
-    </script>
+        <script src="./js/tractors.js"></script>
+
 </body>
 </html>
