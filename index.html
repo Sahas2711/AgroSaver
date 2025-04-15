@@ -8,6 +8,88 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <!-- Removed missing CSS files -->
     <link rel="icon" href="images/placeholder.jpg">
+    <link rel="stylesheet" href="./css/header.css">
+    <style>
+        /* Dark mode styles for main sections except header and footer */
+        main, 
+        main section.hero,
+        main section.features-wrap,
+        main section.how-it-works,
+        main section.about-section,
+        main section.latest-news,
+        main section.feedback-section {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        main section.hero .hero-text h1,
+        main section.hero .hero-text p.subhead,
+        main section.features-wrap h3,
+        main section.how-it-works h2,
+        main section.how-it-works h3,
+        main section.about-section h2,
+        main section.latest-news h2,
+        main section.latest-news h3,
+        main section.feedback-section h2,
+        main section.feedback-section .testimonial-content p,
+        main section.feedback-section .testimonial-content .rating {
+            color: #a0a0a0;
+        }
+        main section.hero .hero-stats .stat-number {
+            color: #888888;
+        }
+        main section.features-wrap .feature-card,
+        main section.how-it-works .step,
+        main section.about-section .about-content,
+        main section.latest-news .news-card,
+        main section.feedback-section .testimonial-card {
+            background-color: #1e1e1e;
+            border-color: #333;
+            color: #e0e0e0;
+        }
+        main section.features-wrap .feature-card p,
+        main section.how-it-works .step p,
+        main section.about-section .about-text p,
+        main section.about-section .about-features li,
+        main section.latest-news .news-content p,
+        main section.feedback-section .testimonial-content p {
+            color: #cfcfcf;
+        }
+        main section.about-section a.learn-more-button,
+        main section.latest-news a.read-more,
+        main section.latest-news a.view-all-button,
+        main section.feedback-section button.newsletter-button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: none;
+        }
+        main section.about-section a.learn-more-button:hover,
+        main section.latest-news a.read-more:hover,
+        main section.latest-news a.view-all-button:hover,
+        main section.feedback-section button.newsletter-button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        main section.hero .cta-button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: none;
+        }
+        main section.hero .cta-button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        /* Scroll indicator */
+        main section.hero .hero-scroll-indicator span {
+            color: #e0e0e0;
+        }
+        /* Links */
+        main a {
+            color: #80cbc4;
+        }
+        main a:hover {
+            color: #4db6ac;
+        }
+    </style>
 </head>
 <body>
     <div class="page-loader">
@@ -15,76 +97,75 @@
         <p>Loading AgroSaver...</p>
     </div>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="images/logo.svg" alt="AgroSaver" class="logo">
-                </a>
+    <header>
+        <!-- HEADER SECTION -->
+        <div class="header">
+          <!-- LOGO AND LOCATION -->
+          <div class="logo">
+            <img src="./images/logo.svg" alt="AgroSaver Logo">
+            <span>AgroSaver</span>
+            <div class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Deliver to<br><strong>India</strong>
             </div>
-
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item active"><a href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="products.html">Products <i class="dropdown-icon">▼</i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products.html">Farm Equipment</a></li>
-                            <li><a href="products.html">Seeds & Plants</a></li>
-                            <li><a href="products.html">Fertilizers</a></li>
-                            <li><a href="products.html">Irrigation</a></li>
-                            <li><a href="allProducts.html">See All Products</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="index.html#About-section">About</a>
-                    </li>
-                    <li class="nav-item"><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
-                    <li class="nav-item"><a href="index.html#feedback-section">Feedback</a>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <div class="search-container">
-                    <form class="search-form" action="products.html" method="get">
-                        <input type="text" name="q" placeholder="Search " class="search-input">
-                        <button type="submit" class="search-button">
-                            <i class="search-icon">🔍</i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="user-actions">
-                    <a href="#" class="user-icon" title="My Account"><i>👤</i></a>
-                    <a href="#" class="cart-icon" title="Cart"><i>🛒</i> <span class="cart-count">0</span></a>
-                </div>
+          </div>
+      
+          <!-- SEARCH BAR -->
+          <div class="search-bar">
+            <select>
+              <option value="all">All</option>
+              <option value="grains">Farm Equipment</option>
+              <option value="vegetables">Seeds & Plants</option>
+              <option value="fruits">Irrigation</option>
+              <option value="tools">Farming Tools</option>
+            </select>
+            <input type="text" placeholder="Search Agro Products...">
+            <button><a href="products.html"><i class="fas fa-search"></i></a></button>
+          </div>
+      
+          <!-- ACCOUNT / ORDERS / CART -->
+          <div class="header-icons">
+            <div>
+              Hello, Sign in<br><strong>Account & Lists</strong>
             </div>
-
-            <button class="mobile-menu-toggle">
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-            </button>
+            <div>
+              Returns<br><strong>& Orders</strong>
+            </div>
+            <div class="cart">
+              <i class="fas fa-shopping-cart"></i><br><strong>Cart</strong>
+              <span class="badge">0</span>
+            </div>
+          </div>
         </div>
-    </header>
-
+      
+        <!-- NAVIGATION BAR -->
+        <div class="nav-bar">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products <i class="dropdown-icon"></i></a>
+          <a href="index.html#About-section">About</a>
+          <a href="compare.html">Compare</a>
+          <a href="allProducts.html">All Products</a>
+          <a href="index.html#feedback-section">Feedback</a>
+        </div>
+      </header>
     <main>
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Agricultural Solutions</h1>
-                <p class="subhead">Innovative tools for modern farming</p>
+                <h1 style="color: black;">Agricultural Solutions</h1>
+                <p style="color: black;" class="subhead">Innovative tools for modern farming</p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number" data-count="1000">0</span>
-                        <span class="stat-label">Products</span>
+                        <span class="stat-number" data-count="1000" style="color: black;">0</span>
+                        <span class="stat-label style="color: black;"">Products</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="500">0</span>
-                        <span class="stat-label">Farms</span>
+                        <span class="stat-number" data-count="500" style="color: black;">0</span>
+                        <span class="stat-label" style="color: black;">Farms</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="50">0</span>
-                        <span class="stat-label">Partners</span>
+                        <span class="stat-number" data-count="50" style="color: black;">0</span>
+                        <span class="stat-label" style="color: black;">text</span>
                     </div>
                 </div>
                 <button class="cta-button" id="browseProducts">
@@ -161,7 +242,7 @@
     <section id="about-section" class="about-section">
 
         <div class="container">
-            <h2 style="color: black;">About AgroSaver</h2>
+            <h2 style="color: #a0a0a0;">About AgroSaver</h2>
 
             <div class="about-content">
                 <div class="about-text">
@@ -274,17 +355,9 @@
         </div>
     </section>
 
-    <!-- <section class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="loading-indicator">
-            <span>Loading products...</span>
-        </div>
-        <div class="product-grid">
-             Products will be loaded here via JS 
-        </div>
-    </section> -->
 
-    <!-- <section class="comparison-section">
+
+ <!-- <section class="comparison-section">
         <div class="container">
             <h2>Compare Agricultural Products</h2>
             <div class="comparison-tool">
@@ -333,7 +406,7 @@
                 </table>
             </div>
         </div> 
-    </section>-->
+    </section>  -->
     </main>
 
     <footer class="site-footer">

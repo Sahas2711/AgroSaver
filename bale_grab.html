@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydraulic Bale Grab | AgroSaver</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
     <style>
         .product-detail {
             max-width: 1200px;
@@ -236,57 +237,57 @@
         <p>Loading AgroSaver...</p>
     </div>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="images/logo.svg" alt="AgroSaver" class="logo">
-                </a>
+    <header>
+        <!-- HEADER SECTION -->
+        <div class="header">
+          <!-- LOGO AND LOCATION -->
+          <div class="logo">
+            <img src="./images/logo.svg" alt="AgroSaver Logo">
+            <span>AgroSaver</span>
+            <div class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Deliver to<br><strong>India</strong>
             </div>
-
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item active"><a href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="products.html">Products <i class="dropdown-icon">▼</i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products.html">Farm Equipment</a></li>
-                            <li><a href="products.html">Seeds & Plants</a></li>
-                            <li><a href="products.html">Fertilizers</a></li>
-                            <li><a href="products.html">Irrigation</a></li>
-                            <li><a href="allProducts.html">See All Products</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="index.html#About-section">About</a>
-                    </li>
-                    <li class="nav-item"><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
-                    <li class="nav-item"><a href="index.html#feedback-section">Feedback</a>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <div class="search-container">
-                    <form class="search-form" action="products.html" method="get">
-                        <input type="text" name="q" placeholder="Search " class="search-input">
-                        <button type="submit" class="search-button">
-                            <i class="search-icon">🔍</i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="user-actions">
-                    <a href="#" class="user-icon" title="My Account"><i>👤</i></a>
-                    <a href="#" class="cart-icon" title="Cart"><i>🛒</i> <span class="cart-count">0</span></a>
-                </div>
+          </div>
+      
+          <!-- SEARCH BAR -->
+          <div class="search-bar">
+            <select>
+              <option value="all">All</option>
+              <option value="grains">Farm Equipment</option>
+              <option value="vegetables">Seeds & Plants</option>
+              <option value="fruits">Irrigation</option>
+              <option value="tools">Farming Tools</option>
+            </select>
+            <input type="text" placeholder="Search Agro Products...">
+            <button><a href="products.html"><i class="fas fa-search"></i></a></button>
+          </div>
+      
+          <!-- ACCOUNT / ORDERS / CART -->
+          <div class="header-icons">
+            <div>
+              Hello, Sign in<br><strong>Account & Lists</strong>
             </div>
-
-            <button class="mobile-menu-toggle">
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-            </button>
+            <div>
+              Returns<br><strong>& Orders</strong>
+            </div>
+            <div class="cart">
+              <i class="fas fa-shopping-cart"></i><br><strong>Cart</strong>
+              <span class="badge">0</span>
+            </div>
+          </div>
         </div>
-    </header>
+      
+        <!-- NAVIGATION BAR -->
+        <div class="nav-bar">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products <i class="dropdown-icon"></i></a>
+          <a href="index.html#About-section">About</a>
+          <a href="compare.html">Compare</a>
+          <a href="allProducts.html">All Products</a>
+          <a href="index.html#feedback-section">Feedback</a>
+        </div>
+      </header>
 
     <main class="product-detail">
         <div class="product-header">

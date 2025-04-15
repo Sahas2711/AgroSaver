@@ -32,60 +32,60 @@
             background-color: #f2f2f2;
         }
     </style>
+     <link rel="stylesheet" href="./css/header.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="images/logo.svg" alt="AgroSaver" class="logo">
-                </a>
+    <header>
+        <!-- HEADER SECTION -->
+        <div class="header">
+          <!-- LOGO AND LOCATION -->
+          <div class="logo">
+            <img src="./images/logo.svg" alt="AgroSaver Logo">
+            <span>AgroSaver</span>
+            <div class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Deliver to<br><strong>India</strong>
             </div>
-
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item active"><a href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="products.html">Products <i class="dropdown-icon">▼</i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products.html">Farm Equipment</a></li>
-                            <li><a href="products.html">Seeds & Plants</a></li>
-                            <li><a href="products.html">Fertilizers</a></li>
-                            <li><a href="products.html">Irrigation</a></li>
-                            <li><a href="products.html">Livestock Supplies</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="#about-section">About</a>
-                    </li>
-                    <li class="nav-item"><a href="https://www.linkedin.com/company/farm-compare/?originalSubdomain=pk">Contact</a></li>
-                    <li class="nav-item"><a href="#feedback-section">Feedback</a>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <div class="search-container">
-                    <form class="search-form">
-                        <input type="text" placeholder="Search products..." class="search-input">
-                        <button type="submit" class="search-button" href="products.html">
-                            <i class="search-icon">🔍</i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="user-actions">
-                    <a href="#" class="user-icon" title="My Account"><i>👤</i></a>
-                    <a href="#" class="cart-icon" title="Cart"><i>🛒</i> <span class="cart-count">0</span></a>
-                </div>
+          </div>
+      
+          <!-- SEARCH BAR -->
+          <div class="search-bar">
+            <select>
+              <option value="all">All</option>
+              <option value="grains">Farm Equipment</option>
+              <option value="vegetables">Seeds & Plants</option>
+              <option value="fruits">Irrigation</option>
+              <option value="tools">Farming Tools</option>
+            </select>
+            <input type="text" placeholder="Search Agro Products...">
+            <button><a href="products.html"><i class="fas fa-search"></i></a></button>
+          </div>
+      
+          <!-- ACCOUNT / ORDERS / CART -->
+          <div class="header-icons">
+            <div>
+              Hello, Sign in<br><strong>Account & Lists</strong>
             </div>
-
-            <button class="mobile-menu-toggle">
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-            </button>
+            <div>
+              Returns<br><strong>& Orders</strong>
+            </div>
+            <div class="cart">
+              <i class="fas fa-shopping-cart"></i><br><strong>Cart</strong>
+              <span class="badge">0</span>
+            </div>
+          </div>
         </div>
-    </header>
-
+      
+        <!-- NAVIGATION BAR -->
+        <div class="nav-bar">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products <i class="dropdown-icon"></i></a>
+          <a href="index.html#About-section">About</a>
+          <a href="compare.html">Compare</a>
+          <a href="allProducts.html">All Products</a>
+          <a href="index.html#feedback-section">Feedback</a>
+        </div>
+      </header>
     
         <section class="comparison-section">
             <div class="container">
@@ -196,7 +196,222 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        const allProducts1 = [
+            {
+                id: 1,
+                name: 'Mahindra Arjun Novo 605 DI-i',
+                price: 780000,
+                features: {
+                    'Power': '57 HP',
+                    'Drive': '2WD',
+                    'Transmission': 'Synchromesh'
+                }
+            },
+            {
+                id: 2,
+                name: 'Swaraj 744 FE',
+                price: 680000,
+                features: {
+                    'Power': '48 HP',
+                    'Cooling': 'Water Cooled',
+                    'Fuel Tank': '60 L'
+                }
+            },
+            {
+                id: 3,
+                name: 'KisanKraft Power Weeder',
+                price: 48000,
+                features: {
+                    'Engine': '4 Stroke Petrol',
+                    'Power': '7 HP',
+                    'Working Width': '90 cm'
+                }
+            },
+            {
+                id: 4,
+                name: 'Disc Harrow',
+                price: 42000,
+                features: {
+                    'Disc Diameter': '22 inch',
+                    'Frame Type': 'Heavy Duty',
+                    'Suitable For': 'All Tractors'
+                }
+            },
+            {
+                id: 5,
+                name: 'Cultivator (9 Tynes)',
+                price: 29000,
+                features: {
+                    'Frame': 'Mild Steel',
+                    'Width': '6 ft',
+                    'Mounting': '3 Point Linkage'
+                }
+            },
+            {
+                id: 6,
+                name: 'Paddy Thresher',
+                price: 55000,
+                features: {
+                    'Capacity': '800 kg/hr',
+                    'Power Source': 'Tractor PTO',
+                    'Operation': 'Multi-crop'
+                }
+            },
+            {
+                id: 7,
+                name: 'Rotavator (5 ft)',
+                price: 67000,
+                features: {
+                    'Blades': 'L-type',
+                    'Tractor Power': '35-50 HP',
+                    'Working Width': '5 ft'
+                }
+            },
+            {
+                id: 8,
+                name: 'Mini Rice Mill',
+                price: 95000,
+                features: {
+                    'Capacity': '150 kg/hr',
+                    'Electric Motor': '3 HP',
+                    'Use': 'Rice Dehusking'
+                }
+            },
+            {
+                id: 9,
+                name: 'Solar Water Pump (5 HP)',
+                price: 180000,
+                features: {
+                    'Pump Type': 'Submersible',
+                    'Panels': '2 kW',
+                    'Application': 'Irrigation'
+                }
+            },
+            {
+                id: 10,
+                name: 'Manual Seed Drill',
+                price: 8500,
+                features: {
+                    'Rows': '6',
+                    'Operation': 'Manual',
+                    'Suitable Crops': 'Wheat, Maize'
+                }
+            },
+            {
+                id: 11,
+                name: 'Knapsack Sprayer',
+                price: 2500,
+                features: {
+                    'Tank Capacity': '16 L',
+                    'Pump Type': 'Piston',
+                    'Operation': 'Manual'
+                }
+            },
+            {
+                id: 12,
+                name: 'Tractor Trailer (Tipping)',
+                price: 130000,
+                features: {
+                    'Capacity': '3 Tons',
+                    'Axle': 'Single',
+                    'Hydraulic': 'Yes'
+                }
+            },
+            {
+                id: 13,
+                name: 'Automatic Sugarcane Planter',
+                price: 240000,
+                features: {
+                    'Rows': '2',
+                    'Tractor Power': '50 HP+',
+                    'Fertilizer Attachment': 'Yes'
+                }
+            },
+            {
+                id: 14,
+                name: 'Drip Irrigation Kit',
+                price: 30000,
+                features: {
+                    'Coverage': '1 Acre',
+                    'Water Saving': '60%',
+                    'Suitable For': 'Vegetables, Fruits'
+                }
+            },
+            {
+                id: 15,
+                name: 'Chaff Cutter (Electric)',
+                price: 22000,
+                features: {
+                    'Blades': '4',
+                    'Motor': '2 HP',
+                    'Output': '400 kg/hr'
+                }
+            },
+            {
+                id: 16,
+                name: 'Zero Till Seed Drill',
+                price: 95000,
+                features: {
+                    'Rows': '9',
+                    'Used For': 'Direct Seeding',
+                    'Suitable Crops': 'Wheat, Gram'
+                }
+            },
+            {
+                id: 17,
+                name: 'Grain Moisture Meter',
+                price: 5200,
+                features: {
+                    'Accuracy': '±0.5%',
+                    'Battery': '9V',
+                    'Suitable Grains': 'Wheat, Rice, Maize'
+                }
+            },
+            {
+                id: 18,
+                name: 'Animal Feed Grinder',
+                price: 48000,
+                features: {
+                    'Motor': '5 HP',
+                    'Capacity': '600 kg/hr',
+                    'Operation': 'Electric'
+                }
+            },
+            {
+                id: 19,
+                name: 'Vermicompost Bed Kit',
+                price: 3800,
+                features: {
+                    'Material': 'UV Stabilized HDPE',
+                    'Size': '12x4x2 ft',
+                    'Included': 'Support Rods, Net'
+                }
+            },
+            {
+                id: 20,
+                name: 'Soil pH & Moisture Tester',
+                price: 1500,
+                features: {
+                    'Measurement': 'pH & Moisture',
+                    'Power': 'No battery required',
+                    'Application': 'Soil Health Check'
+                }
+            }
+        ];
+        
+        const dropdowns = document.querySelectorAll('.product-dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            allProducts1.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.id;
+                option.textContent = product.name;
+                dropdown.appendChild(option);
+            });
+        });
+        </script>
+        
     <script src="js/compare.js"></script>
 </body>
 </html>

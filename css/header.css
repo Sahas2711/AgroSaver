@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+  }
+
+  .header {
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .logo span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #febd69;
+  }
+
+  .location {
+    margin-left: 15px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .location i {
+    margin-right: 5px;
+    color: #febd69;
+  }
+
+  .location strong {
+    font-size: 14px;
+    color: white;
+  }
+
+  .search-bar {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    margin: 10px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .search-bar select {
+    padding: 10px;
+    border: none;
+    background-color: #e6e6e6;
+    color: black;
+    font-size: 14px;
+  }
+
+  .search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+
+  .search-bar button {
+    background-color: #febd69;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+  }
+
+  .search-bar button:hover {
+    background-color: #f3a847;
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-icons div {
+    text-align: left;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .header-icons div strong {
+    display: block;
+    font-size: 14px;
+  }
+
+  .cart {
+    position: relative;
+  }
+
+  .cart i {
+    font-size: 20px;
+  }
+
+  .cart .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #f08804;
+    color: black;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+
+  .nav-bar {
+    background-color: #232f3e;
+    display: flex;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+    padding: 5px 0;
+  }
+
+  .nav-bar a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    .search-bar {
+      flex-direction: column;
+      margin: 10px 0;
+    }
+  }
